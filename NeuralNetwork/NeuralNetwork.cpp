@@ -24,7 +24,7 @@ namespace NeuralNetwork
 		NeuronLayer *inputLayerPtr = _layers[INPUT_LAYER];
 		int inputNeuronCount = settings->getInputCount();
 		if (settings->isInputBiasUsed()) inputNeuronCount++;
-		_layersOut[INPUT_LAYER] = new double[inputNeuronCount];
+		_layersOut[INPUT_LAYER] = new double[inputLayerPtr->getNeuronCount()];
 		for (int n = 0; n < inputNeuronCount; n++)
 		{
 			Neuron* inputNeuronPtr = inputLayerPtr->getNeurons()[n];
@@ -43,7 +43,7 @@ namespace NeuralNetwork
 			NeuronLayer *layerPtr = _layers[l];
 			int neuronsCount = layer->getNeuronCount();
 			if (layer->isBiasUsed()) neuronsCount++;
-			_layersOut[l] = new double[neuronsCount];
+			_layersOut[l] = new double[layerPtr->getNeuronCount()];
 			_deltas[l - 1] = new double[layer->getNeuronCount()];
 			if (layer->getWeights())
 			{

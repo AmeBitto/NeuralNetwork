@@ -61,14 +61,14 @@ void study(NeuralNetwork::NeuralNetwork* brain, int cicles)
 int main(int argc, char* argv[])
 {
 	NeuralNetwork::NeuronSettings* settings = 
-		new NeuralNetwork::NeuronSettings(0.5f, 4, 2);
+		new NeuralNetwork::NeuronSettings(0.5f, 4, 2, true);
 
 	// Hidden layer
 	NeuralNetwork::NeuronLayerSettings* hiddenLayer1 =
 		new NeuralNetwork::NeuronLayerSettings(4);
 	settings->addLayer(hiddenLayer1);
 	NeuralNetwork::NeuronLayerSettings* hiddenLayer2 =
-		new NeuralNetwork::NeuronLayerSettings(10);
+		new NeuralNetwork::NeuronLayerSettings(10, true);
 	settings->addLayer(hiddenLayer2);
 	NeuralNetwork::NeuronLayerSettings* hiddenLayer3 =
 		new NeuralNetwork::NeuronLayerSettings(8);
